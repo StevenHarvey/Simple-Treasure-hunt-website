@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+<title>TH Home</title>
+<style>
+    body {
+        background-image: url('https://cutewallpaper.org/21/1920-x-1080-gif/Gifart-Lo-Fi-Wallpapers-Top-Free-Gifart-Lo-Fi-Backgrounds-.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        /* Hide scrollbars */
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+    }
+
+    .disable-select {
+        user-select: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+
+    div2 {
+        color: #000;
+        color: rgba(0, 0, 0, 0);
+
+        font-size: 16pt;
+        font-family: Arial, sans-serif;
+
+    }
+
+    .centertime {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -130px;
+        pointer-events: none;
+        transform-origin: center;
+        display: block;
+    }
+
+    .music-chrome {
+        color: rgba(0, 0, 0, 0);
+        width: 0;
+        height: 0;
+        display: none
+    }
+</style>
+</div>
+<div class="disable-select">
+
+    <body>
+        
+        <div id=lockeddiv style='font-style:italic'></div>
+        <div id=messagediv style='font-style:italic'></div>
+        <script>
+            var music = new Audio("https://www.youtube.com/embed/NxSDNogkKX0?")
+            var chime = new Audio("https://www.youtube.com/embed/NxSDNogkKX0")
+            var nothing = new Audio("https://www.youtube.com/embed/NxSDNogkKX0")
+            var allAudio = []
+            allAudio.push(music)
+            allAudio.push(chime)
+
+            var tapped = function () {
+                messagediv.innerHTML = "tapped"
+
+                // Play all audio files on the first tap and stop them immediately.
+                if (allAudio) {
+                    for (var audio of allAudio) {
+                        audio.play()
+                        audio.pause()
+                        audio.currentTime = 0
+                    }
+                    allAudio = null
+                }
+
+                // We should be able to play music delayed now (not during the tap event).
+                messagediv.innerHTML = " "
+                setTimeout(function () {
+                    messagediv.innerHTML = " "
+                    music.play()
+                }, 2000)
+
+            }
+            document.body.addEventListener('touchstart', tapped, false)
+            document.body.addEventListener('click', tapped, false)
+
+            var stop = function () {
+                music.pause()
+                loop = null
+                document.body.removeEventListener('touchstart', tapped, false)
+                document.body.removeEventListener('click', tapped, false)
+            }
+
+            // Check if audio starts already unlocked by playing a blank wav.
+            nothing.play().then(function () {
+                lockeddiv.innerHTML = " "
+            }).catch(function () {
+                lockeddiv.innerHTML = " "
+            })
+
+            var loop = function () {
+                // Try to play chimes whenever we want (not during user action).
+                if (Math.random() < .01) {
+                    chime.play().then(function () {
+                        lockeddiv.innerHTML = "  "
+                    })
+                }
+                setTimeout(loop, 16)
+            }
+            loop()
+        </script>
+        <div2>
+            <p>Hellos</p>
+        </div2>
+        <p id="plotting"></p>
+        <script language="JavaScript">
+            window.onload = function () {
+                document.addEventListener("contextmenu", function (e) {
+                    e.preventDefault();
+                }, false);
+                document.addEventListener("keydown", function (e) {
+
+                    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                        disabledEvent(e);
+                    }
+                    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                        disabledEvent(e);
+                    }
+                    //Welcome to the back side of my code :) Enjoy your stay. You've made it this far, I am proud of you. Not many have, but the few that have have been granted access
+                    // to my discord server with the next challenge! On this challenge I encourage you to help your fellow Net Debuggers and Coders
+                    if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                        disabledEvent(e);
+                    }
+
+                    if (e.ctrlKey && e.keyCode == 85) {
+                        disabledEvent(e);
+                    }
+
+                    if (event.keyCode == 123) {
+                        disabledEvent(e);
+                    }
+                }, false);
+                function disabledEvent(e) {
+                    if (e.stopPropagation) {
+                        e.stopPropagation();
+                    } else if (window.event) {
+                        window.event.cancelBubble = true;
+                    }
+                    e.preventDefault();
+                    return false;
+                }
+            };
+        </script>
+        <div3 class="centertime">
+            <iframe
+                src="http://free.timeanddate.com/clock/i78i0wu9/n398/fn12/fs36/fcfff/tct/pct/ftb/tt0/tw0/tm1/ts1/ta1/tb4"
+                frameborder="0" width="270" height="74" align="right" allowTransparency="true"></iframe>
+
+        </div3>
+        <iframe width="0" height="0" src="https://www.youtube.com/embed/mu5CqEJ1e6E?ref=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    </body>
+
+
+</html>
