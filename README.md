@@ -1,0 +1,2 @@
+# Simple-Treasure-hunt-website
+This was a fun project to make. A new version will be made on my website https://nolant.org @ https://hunt.nolant.org - Nothing is setup yet, but will be soon. This source code has a start, but no finish. The API keys are invalid and unusable, so you'll need to get new API keys. The login page's password is never the same, it's custom generated for each user, which is fun! It's a pretty simple and fun script, so have a go at it! Take as you please. This was my second ever HTML script and the hardest I had done at the time in Python
